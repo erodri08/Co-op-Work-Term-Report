@@ -1,116 +1,335 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title> # ERodrigues_WritingAssignment1_CIS1250 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-op Work Term Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: 'Arial', sans-serif;
-      }
-
-      h2, h1 {
-        text-align: center;
-        font-family: 'Arial', sans-serif;
-      }
-    </style>    
-  </head>
-  <body>
-    <h2>Ethan Rodrigues 1277308</h2>
-
-    <h1> Writing Assignment 1 </h1>
-
-    <p>The software design process is how problems presented to programmers are turned into a blueprint for creating software. Its main focuses are the questions: “what are you solving” and “who is using the product”. This process involves being faced with a problem, understanding and documenting the problem, designing and implementing solutions to the problem and then testing the solution. It is often exemplified by the waterfall process: gather requirements, design, implement, test, maintain. Another approach to this process is the agile method where more time is spent on planning and gathering requirements for small iterations of the solutions to the problem.  </p>
-    <p>Software design and planning before the programming process is very important because it gives the developers a better idea of client expectations, resulting in a better user experience. If you begin developing a solution to a problem before clearly designing how the problem will be solved, the program may not accurately solve the problem or produce errors. There must be clearly defined requirements, outlined by the client that define the users, non-standard terms, user terms, priorities and categories of development to create an effective piece of software.  </p>
-    <p>One software that I have used that I personally think has effectively prioritized effective software design is the website of Apple, a company that manufactures and sells technological products such as phones and laptops. I believe that their website is designed well because it is easy to navigate and it displays their products in a way that is appealing, with large images, interactive diagrams and colorful design. When opening the homepage of the website, their newest product that customers are more likely to be interested in is displayed in a large image with appealing words like “strong”, light”, and “pro”. They also have a navigation bar at the top of their website with a list of the different services, products and support offered by the company. Included in this section is a search function that allows users to find their desired information. These features provide a feeling of elegance for the brand while keeping the customers engaged. When I used the site, its functions worked effectively and gave me the impression that there was an extensive amount of planning in the design process of this software.  </p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #e0e0e0;
+            background-image: url('skyline.jpg');
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header {
+            background-color: rgba(205, 236, 255, 0.909);
+            width: 100%;
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .title {
+            font-size: 3.2rem;
+            font-weight: 700; /* Changed to bold */
+            margin-bottom: 20px;
+            color: #2c2c2c;
+            text-align: center;
+        }
+        
+        .subtitle {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+            text-align: center;
+        }
+        
+        .text {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #2c2c2c;
+            text-align: center;
+        }
+        
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        
+        .button {
+            background-color: rgba(180, 229, 255, 0.668);
+            color: black;
+            text-decoration: none;
+            padding: 30px 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            min-height: 280px;
+        }
+        
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background-color: rgba(112, 112, 112, 0.95);
+        }
+        
+        .button img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 25px;
+            object-fit: contain;
+        }
+        
+        .button-text {
+            font-size: 1.6rem;
+            font-weight: 400;
+            text-align: center;
+            color: #000;
+        }
+        
+        /* Subpage styles */
+        .subpage {
+            display: none;
+            width: 100%;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        .content-box {
+            background-color: rgba(176, 176, 176, 0.9);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            max-height: 80vh;
+            overflow-y: auto;
+            color: #2c2c2c;
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            background-color: #606060;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+        
+        .back-button:hover {
+            background-color: #707070;
+        }
+        
+        .subpage-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+        
+        .subpage-title {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #2c2c2c;
+        }
+        
+        .subpage-logo {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .subpage-content {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        
+        .subpage-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Home button for subpages */
+        .home-button {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #606060;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            z-index: 100;
+        }
+        
+        @media (max-width: 1200px) {
+            .button-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .button-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .subpage-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home-page">
+            <div class="header">
+                <h1 class="title">Ethan Rodrigues</h1>
+                <h2 class="subtitle">Work Term Report Portfolio</h2>
+                <p class="text">This website contains my work term reports throughout my co-op experience and will be updated at the end of each of my work terms.</p>
+            </div>
+            
+            <div class="button-container">
+                <a href="#" class="button" onclick="showSubpage('wt1')">
+                    <img src="logoWT1.png" alt="WT1 Logo">
+                    <span class="button-text">Work Term 1 - Summer 2025 <br> Intelligo Partners at Guardian Capital </span>
+                </a>
+                <a href="#" class="button" onclick="showSubpage('wt2')">
+                  <img src="logoWT2.png" alt="WT2 Logo">
+                  <span class="button-text">Work Term 2 - Fall 2025 <br> Scotiabank - (To Be Completed) </span>
+                </a>
+                <a href="#" class="button" onclick="showSubpage('wt3')">
+                  <img src="logoWT3.png" alt="WT3 Logo">
+                  <span class="button-text">Work Term 3 - Summer 2026 <br> (To Be Completed)</span>
+                </a>
+                <a href="#" class="button" onclick="showSubpage('wt4')">
+                  <img src="logoWT4.png" alt="WT4 Logo">
+                  <span class="button-text">Work Term 4 - Winter 2027 <br> (To Be Completed)</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Subpages -->
+        <div id="wt1" class="subpage">
+            <button class="back-button" onclick="goBack()">Back to Home</button>
+            <div class="content-box">
+                <div class="subpage-header">
+                    <h2 class="subpage-title">Work Term 1</h2>
+                    <img src="https://via.placeholder.com/100/e0e0e0/606060?text=WT1" alt="WT1 Logo" class="subpage-logo">
+                </div>
+                <div class="subpage-content">
+                    <p>Text</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="wt2" class="subpage">
+            <button class="back-button" onclick="goBack()">Back to Home</button>
+            <div class="content-box">
+                <div class="subpage-header">
+                    <h2 class="subpage-title">Work Term 2</h2>
+                    <img src="https://via.placeholder.com/100/e0e0e0/606060?text=WT2" alt="WT2 Logo" class="subpage-logo">
+                </div>
+                <div class="subpage-content">
+                    <p>Text</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="wt3" class="subpage">
+            <button class="back-button" onclick="goBack()">Back to Home</button>
+            <div class="content-box">
+                <div class="subpage-header">
+                    <h2 class="subpage-title">Work Term 3</h2>
+                    <img src="https://via.placeholder.com/100/e0e0e0/606060?text=WT3" alt="WT3 Logo" class="subpage-logo">
+                </div>
+                <div class="subpage-content">
+                    <p>Text</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="wt4" class="subpage">
+            <button class="back-button" onclick="goBack()">Back to Home</button>
+            <div class="content-box">
+                <div class="subpage-header">
+                    <h2 class="subpage-title">Web Technology 4</h2>
+                    <img src="https://via.placeholder.com/100/e0e0e0/606060?text=WT4" alt="WT4 Logo" class="subpage-logo">
+                </div>
+                <div class="subpage-content">
+                    <p>Welcome to the Work Term 4 Section. This section will be updated with relevant content upon completion of my fourth work term in the Winter of 2027.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <h1>Writing Assignment #2 </h1>
-
-    <p> 1.	Gathering requirements is the first step in the software development process. It involves communicating with the client to determine the purpose and functionality of the software. The main questions asked during this phase are “what are you solving?” and “who is using the product?”. The requirements are a clear and concise description of the client’s needs. Good requirements define the users, define non-standard terms, define user terms, are categorized, are prioritized and flow logically. They are based on the user stories that are communicated to the developer and written on the requirements document. These requirements are then transformed into a plan for building software. This is a very important stage in the software development process because it clearly defines what problem the software faces and what the client needs the software to do. If the requirements are unknown or unclear, the software will likely not meet the client’s needs or solve its desired problem properly. When the requirements stage is ignored, time and money are wasted because developers might be creating a program that does not do the necessary task. It is the base that the rest of the software development process is built upon.</p> 
-
-    <p> 2.	User stories for apple website:</p> 
-    <ol type = "a">
-      <li> As a customer, I want to be able to view all available products so that I can choose which one I want to purchase.</li>
-      <li> As a warehouse employee, I want to be able to update product inventory, so that website can display product availability.</li>
-      <li> As a store employee, I want to be able to add new products to the website when they are released.</li>
-      <li> As a customer, I want to be able to purchase products through the website with credit card information so that I can obtain the product. </li>
-      <li> As a customer, I want to be able to search for products by typing key words into a search bar so that I can find my desired product more efficiently.</li>
-    </ol>
-
-    <h1>Writing Assignment #3 </h1>
-
-    <p>	Chapter three of the Subject to Change textbook describes the important role of empathy in business models and how to incorporate elements of empathy into a business to provide a greater product or service for the consumer. Empathy involves a flexible and comprehensive understanding of users and the issues they experience.  It is being aware of, sensitive to and vicariously experiencing their feelings and thoughts. Experiencing empathy for the consumer can help the designer create better user stories and deal with the uncertainty of the human behaviour. A business can gain a better grasp of empathy through reviews, surveys, focus groups and interviews with consumers. The text provides three examples of older business models that struggle with elements of empathy, causing overall dissatisfaction for the user. The first business model described sees people solely as a means to profit. This model is the worst for users because it emphasizes revenue over a genuine understanding of need, creating a barrier in developing empathy. The second model likens customers to sheep, considering them gullible, easily fooled through marketing. This model views all users as the same, not being able to think for themselves. This model’s weaknesses lie in ignoring the growing levels of education and connectedness among the public. The third ineffective model is homo economicus, which oversimplifies behaviour to reducing it to decision making for maximum utility. This model ignores the empathy in human decision making and the unpredictability of everyday life. While this model is better in the sense that it moves organizations beyond a focus on messaging toward the features of a product or service, it is too heavily focused on return on. Companies must be attentive to the human factor – a focus on seeing how humans actually use products or services, incorporating real world factors. </p>
-
-    <h1>Writing Assignment #4 </h1>
-
-    <p>Chapter 5 of the Subject to Change textbook introduces various products and experiences that have each revolutionized their industries by redesigning their customer experience to prioritize the user. In this assignment, I will focus on the Kodak Camera and a possible user persona for this product. This product had a simple message: “you press the button; we do the rest”. It promised its users a drastically simplified experience, where photographers no longer needed to develop the film themselves. Kodak company would receive the consumer’s film by mail and send the photos back to them, developed and ready to view. At the time, photo creation was an arduous process that took long hours to perfect, making it inaccessible to many. Thanks to the strides made by Kodak over a hundred years ago, it has ushered in the new wave of photography, where almost everyone has access to a camera to document their daily lives. They looked at a new type of persona to design a product for, which allowed them to become an industry leader in photography.</p>
-
-    <p><strong>Persona:</strong></p>
-    <img src="IMG_E3EE8591B8D2-1.jpeg" alt="Stefanie Fernandes" width="150">
-    <p><strong>Stefanie Fernandes</strong></p>
-    <p>“I love making photo albums and feel nostalgic for the film cameras that I grew up with. My family is the most important thing to me. I want a way to document my family’s experiences in an accessible and easy way.”</p>
-    <p>Age: 45</p>
-    <p>Occupation: Art Teacher</p>
-    <p>Household Income: Moderate to upper middle class</p>
-    <p>Marital Status: Married</p>
-
-    <p>Styles</p>
-    <ul>
-      <li>Nostalgic: enjoys reliving cherished memories from the past</li>
-      <li>Artistic: very creative</li>
-    </ul>
-    
-    <p>Home: Stefanie Lives in a two-story detached house in Markham, Ontario with her husband and two children. She has lived here for 19 years.</p>
-
-    <p>Dimensions</p>
-    <ul>
-      <li>Prefers simpler products that make the user experience more efficient, aligning with her busy lifestyle as a teacher and a mother.</li>
-      <li>Likes portable products she can take with her on the go, offering convenience and flexibility.</li>
-    </ul>
-
-    <p>Motivations</p>
-    <ul>
-      <li>Family: Stefanie has a strong bond with her family and enjoys spending time with them.</li>
-      <li>Artistic Expression: Stefanie enjoys art as a hobby and is always looking for creative outlets.</li>
-      <li>Nostalgia and Memories: Stefanie likes to look back on old memories of family and friends.</li>
-    </ul>
-      
-    <h1>Writing Assignment #5 </h1>
-    <p>Prototyping is a very important concept in software design, giving developers the ability to create non-functional models of a product. These prototypes serve as important stepping stones in the development process. Prototyping is used to explore design options, demonstrate concepts, validate requirements, and ensure that the user interface is functional. Implementing prototyping helps reduce the development effort by allowing teams to identify and fix issues early in their process, saving time and resources. This strategy fosters communication between users, clients, and the developers—making sure that the final product is aligned exactly with their needs and making them feel like co-designers in the process.</p>
-    <p>Paper prototypes, a type of prototype, are especially useful for brainstorming, designing, testing, and communicating user interfaces. The first step of this process is choosing the most important user of the product. The second step is to determine some typical tasks that they may perform, determining their needs. Next, make screenshots or sketches to build the prototype. The fourth step is to evaluate the prototype through performing a usability test. In this stage a facilitator guides interactions, a human computer actor simulates system responses, and an observer takes notes. These steps can be repeated, with adjustments being made based on user feedback. The simplicity of this method – using common items like paper, markers, and sticky notes – makes it cost efficient and effective at enhancing software design. </p>
-
-
-    <h1>Writing Assignment #6 </h1>
-    <p>Communication is among the most important elements of software design. Ineffective communication jeopardizes a significant portion of a project’s budget at all stages of the software development process. During the requirements analysis stage, communication is vital for the creation of the requirements document, where the client describes the problems they want solved by the software. If not communicated properly, the developer might not effectively address the intended issue. In the design stage, developers collaborate to answer the question: “How are you solving the problem?”. Here, prototyping and usability studies are used as communication tools to understand user needs in an interactive way. The design document is written based on the results of these findings. After these stages, technical reviews, brainstorming, implementation, and testing are done on the product, further communicating to the developers how they can improve the program. Some key elements of effective communication that are relevant in software design are being honest, open, empathetic and to avoid pressure. Honesty is essential to maintain trust within a team and with clients, ensuring that issues and challenges will be acknowledged transparently. Openness and empathy encourage the free flow of ideas and feedback which furthers innovation and adaptability. </p>
-
-    <p>One instance of miscommunication that really stood out to me in my life was computer science project where my group was creating video game program. We each wrote the code for different levels of the game separately and planned to put all the pieces of code together in the end. We didn’t spend enough time working together and when it came together at the end, each level of the game looked drastically different than the others. We learned that communication was vital to creating a cohesive software product.</p>
-
-    <h1>Writing Assignment #7 </h1>
-    <p>The Pareto Principle, also known as the 80/20 rule, states that 20% of efforts creates 80% of results. In the context of software design, this means that 20% of the input such as time, resources and effort, accounts for 80% of the output that is results and rewards. This principle suggests that a large amount of software issues or features are driven by a small set of core functionalities. Focusing on this vital 20% will enhance a software product produced by a development team. Developers must learn to prioritize the important choices over others. This increases accessibility because of its perceptibility, operability, forgiveness, and simplicity. Confirmation dialogues and error messages should be tailored to address the most frequent issues or mistakes, streamlining the user’s experience. I have experienced this principle in my life many times and here are two examples of such:</p>
-
-  <ul>
-    <li>When studying for a Math exam, I found it to be overwhelming to study every lesson and homework question provided. So instead, I quickly went over all the information, gathering the small amount of vital 20% of information such as formulas and concepts that can be applied to the greater 80% of the rest of material.</li>
-
-    <li>When working on an interactive computer game project in a computer science course, I found that many parts of my pseudocode for each section of the game were repeated, as many of the different parts of the game required similar code. I applied the Pareto principle by creating smaller functions that can be called repeatedly throughout the greater code. I put in a 20% effort into these functions and applied their usage through the other 80% to create a strong software product with a cohesive experience for the user.</li>
-  </ul>
-
-
-    <h1>Writing Assignment #8 </h1>
-    <p>Deceptive patterns in software design violate several principles in the ACM’s code of ethics. This code emphasises what is considered “right” and “wrong” in the process of software design, with the intent of prioritizing ease of use for the consumer over the financial interests of the companies that create the software. The deceptive pattern of the “hidden subscription” involves unknowingly enrolling users in recurring subscriptions or payment plans with clear disclosure or explicit consent. This violates the ACM’s code of ethics at each of these levels:</p>
-
-    <ul>
-        <li>The principle “Contribute to society and to human well-being, acknowledging that all people are stakeholders in computing” is violated because this principle exploits them without their consent. This cause financial and mental anguish which prevents human well-being.</li>
-
-        <li>The principle “Avoid harm” is violated because hidden subscriptions cause financial harm to the user who may not be aware of recurring charges. The lack of clear disclosure can lead to unintended harm.</li>
-
-        <li>The principle of “Be honest and trustworthy” is violated because in charging a subscription price unknowingly, the company is not being honest and transparent with the user. In not providing clear information about ongoing charges, this lack of transparency erodes trust in the service.</li>
-
-        <li>“Be fair and take action not to discriminate” is violated because users who are not as familiar with digital purchases and terminology regarding the exchange of money are more likely to fall for the trick of the hidden subscription. This discriminates them, making them more likely to experience financial loss.</li>
-
-        <li>The principle “Respect privacy” is violated because hidden subscriptions may involve the misuse of personal and financial information to enroll users without their knowledge.</li>
-    </ul>
-
-    <p>Addressing and eliminating dark patterns like the hidden subscription is essential for upholding the integrity and ethical standards of software development.</p>
-
-    
-    <p>Reference: Merholz, Peter, et al. Subject to Change: Creating Great Products and Services for an Uncertain World – Adaptive Path on Design, O'Reilly Media, Incorporated, 2008. ProQuest Ebook Central, http://ebookcentral.proquest.com/lib/uoguelph/detail.action?do.</p>
-  
-  </body>
+    <script>
+        function showSubpage(pageId) {
+            // Hide home page
+            document.getElementById('home-page').style.display = 'none';
+            
+            // Hide all subpages
+            const subpages = document.querySelectorAll('.subpage');
+            subpages.forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show the selected subpage
+            document.getElementById(pageId).style.display = 'block';
+        }
+        
+        function goBack() {
+            // Hide all subpages
+            const subpages = document.querySelectorAll('.subpage');
+            subpages.forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show the home page
+            document.getElementById('home-page').style.display = 'flex';
+            document.getElementById('home-page').style.flexDirection = 'column';
+            document.getElementById('home-page').style.alignItems = 'center';
+        }
+    </script>
+</body>
 </html>
