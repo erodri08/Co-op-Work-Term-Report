@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #e0e0e0;
+  background-image: url('images/homepage/skyline.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 95%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header {
+  background-color: rgba(205, 236, 255, 0.909);
+  width: 100%;
+  padding: 40px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.subsubtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.subsubsubtitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.button {
+  background-color: rgba(180, 229, 255, 0.677);
+  color: black;
+  text-decoration: none;
+  padding: 30px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  min-height: 280px;
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background-color: rgba(205, 236, 255, 0.909);
+}
+
+.button img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 25px;
+  object-fit: contain;
+}
+
+.button-text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  color: #000;
+}
+
+/* Subpage styles */
+.content-box {
+  background-color: rgba(205, 236, 255, 0.819);
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  color: #2c2c2c;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 80px; 
+}
+
+.back-button {
+  position: fixed; 
+  top: 40px; 
+  left: 40px;
+  background-color: rgba(224, 243, 255, 0.95);
+  color: rgb(36, 45, 65);
+  border: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  transition: all 0.3s;
+  z-index: 1000;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.back-button:hover {
+  background-color: rgb(221, 242, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.subpage-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 30px;
+}
+
+.subpage-title {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.subpage-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.subpage-content {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.subpage-content p {
+  margin-bottom: 20px;
+}
+
+.subpage-content ul {
+  margin-bottom: 20px;
+  padding-left: 40px;
+}
+
+.subpage-content li {
+  margin-bottom: 10px;
+}
+
+/* REUSABLE IMAGE STYLES - Applied to all pages */
+.content-image {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 20px 0;
+  width: 100%;
+  height: auto;
+  max-width: 100%; 
+  object-fit: cover;
+}
+
+.image-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.image-caption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Skill and goal formatting - REUSABLE */
+.skill-title {
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.goal-item {
+  margin-bottom: 15px;
+}
+
+.goal-title {
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+/* Section dividers - REUSABLE */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(to right, rgba(205, 236, 255, 0), rgba(180, 229, 255, 0.8), rgba(205, 236, 255, 0));
+  margin: 40px 0;
+  border: none;
+}
+
+/* REUSABLE LAYOUT STYLES - For all image groups */
+.image-group {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-group-item {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  max-width: 45%;
+}
+
+/* Specific sizing for different image types */
+.image-group-item .content-image {
+  max-width: 300px; 
+}
+
+/* For single centered images (like Udemy certificate) */
+.centered-image {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* For side-by-side layouts with text (like bike section) */
+.side-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.side-layout > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.side-layout img {
+  max-width: 350px;
+}
+
+/* For conclusion/end of page images */
+.conclusion-images {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.conclusion-images > div {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  max-width: 45%;
+}
+
+.conclusion-images img {
+  max-width: 350px;
+}
+
+@media (max-width: 1200px) {
+  .button-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .title {
+      font-size: 2.5rem;
+  }
+  
+  .subtitle {
+      font-size: 1.8rem;
+  }
+  
+  .subpage-header {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 12px 18px;
+      font-size: 0.9rem;
+  }
+  
+  .content-box {
+      padding: 40px 20px;
+      margin-top: 70px;
+  }
+    .image-group,
+  .side-layout,
+  .conclusion-images {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+  
+  .image-group-item,
+  .side-layout > div,
+  .conclusion-images > div {
+      width: 100%;
+      max-width: 400px;
+  }
+  
+  .content-image,
+  .centered-image,
+  .side-layout img,
+  .conclusion-images img,
+  .image-group-item .content-image {
+      max-width: 100% !important;
+  }
+}
