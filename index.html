@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Co-op Work Term Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethan Rodrigues — Co-op Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="title">Ethan Rodrigues</h1>
-            <h2 class="subtitle">Work Term Report Portfolio</h2>
-            <p class="text">This website contains my work term reports throughout my co-op experience and will be updated at the end of each of my work terms.</p>
-        </div>
-        
-        <div class="button-container">
-            <a href="wt1.html" class="button">
-                <img src="images/homepage/logoWT1.png" alt="WT1 Logo">
-                <span class="button-text">Work Term 1 - Summer 2025 <br> Intelligo Partners at Guardian Capital</span>
-            </a>
-            
-            <a href="wt2.html" class="button">
-                <img src="images/homepage/logoWT2.png" alt="WT2 Logo">
-                <span class="button-text">Work Term 2 - Fall 2025 <br> Scotiabank</span>
-            </a>
-            
-            <!--
-            <a href="wt3.html" class="button">
-                <img src="images/homepage/logoWT3.png" alt="WT3 Logo">
-                <span class="button-text">Work Term 3 - Summer 2026 <br> (To Be Completed)</span>
-            </a>
-            
-            <a href="wt4.html" class="button">
-                <img src="images/homepage/logoWT4.png" alt="WT4 Logo">
-                <span class="button-text">Work Term 4 - Winter 2027 <br> (To Be Completed)</span>
-            </a>
-        -->
-        </div>
-    </div>
+  <div class="container">
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <a href="index.html" class="nav-brand">Ethan Rodrigues</a>
+      <div class="nav-links">
+        <a href="wt1.html" class="nav-link">WT1</a>
+        <a href="wt2.html" class="nav-link">WT2</a>
+        <a href="wt3.html" class="nav-link">WT3</a>
+        <a href="wt4.html" class="nav-link">WT4</a>
+        <a href="wt5.html" class="nav-link">WT5</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <p class="hero-title">Work Term Portfolio</p>
+      <h1 class="hero-name">Ethan Rodrigues</h1>
+      <p class="hero-desc">My work term reports throughout my co-op experience at the University of Guelph. This site will be updated at the end of each term.</p>
+    </header>
+
+    <!-- Work Term Cards -->
+    <section class="wt-grid">
+
+      <!-- WT1 -->
+      <a href="wt1.html" class="wt-card">
+        <img src="images/logoWT1.png" alt="Intelligo Partners / Guardian Capital logo">
+        <span class="wt-label">Work Term 1</span>
+        <span class="wt-name">Intelligo Partners at Guardian Capital</span>
+        <span class="wt-season">Summer 2025</span>
+      </a>
+
+      <!-- WT2 -->
+      <a href="wt2.html" class="wt-card">
+        <img src="images/logoWT2.png" alt="Scotiabank logo">
+        <span class="wt-label">Work Term 2</span>
+        <span class="wt-name">Scotiabank</span>
+        <span class="wt-season">Fall 2025</span>
+      </a>
+
+      <!-- WT3 -->
+      <a href="wt3.html" class="wt-card">
+        <img src="images/logoWT3.png" alt="CIBC logo">
+        <span class="wt-label">Work Term 3</span>
+        <span class="wt-name">CIBC</span>
+        <span class="wt-season">Summer 2026</span>
+      </a>
+
+      <!-- WT4 -->
+      <a href="wt4.html" class="wt-card upcoming">
+        <div class="wt-placeholder-logo">4</div>
+        <span class="wt-label">Work Term 4</span>
+        <span class="wt-name">TBD</span>
+        <span class="wt-season">Winter 2027</span>
+      </a>
+
+      <!-- WT5 -->
+      <a href="wt5.html" class="wt-card upcoming">
+        <div class="wt-placeholder-logo">5</div>
+        <span class="wt-label">Work Term 5</span>
+        <span class="wt-name">TBD</span>
+        <span class="wt-season">Summer 2027</span>
+      </a>
+
+    </section>
+
+  </div>
 </body>
 </html>
