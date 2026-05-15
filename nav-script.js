@@ -1,7 +1,7 @@
 // Shared nav lightbox script
 (function() {
 
-  // ── Lightbox ────────────────────────────────
+  // Lightbox
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
   const lbImg = document.createElement('img');
