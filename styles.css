@@ -85,10 +85,7 @@
      align-items: center;
      padding: 30px 20px 60px;
    }
-   
-   body.theme-wt1 { background-image: url('images/skylineWT1.png'); }
-   body.theme-wt2 { background-image: url('images/skylineWT2.png'); }
-   body.theme-wt3 { background-image: url('images/skylineWT3.png'); }
+
    
    .container {
      width: 100%;
