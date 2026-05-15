@@ -10,8 +10,8 @@
      --bg-glass:   rgba(210, 235, 255, 0.82);
      --bg-card:    rgba(190, 225, 255, 0.65);
      --bg-hover:   rgba(215, 240, 255, 0.92);
-     --text-dark:  #0d4f95;
-     --text-mid:   #3a4a60;
+     --text-dark:  #09407b;
+     --text-mid:   #1f2835;
      --text-muted: #393e44;
      --accent:     #193049;
      --divider:    rgba(100, 170, 230, 0.5);
@@ -307,26 +307,26 @@
      border-color: rgba(100, 170, 230, 0.55);
    }
 
-   /* WT1 card — golden hover */
-   .wt-card[href="wt1.html"]:hover {
-     background: rgba(200, 150, 40, 0.30);
-     border-color: rgba(180, 130, 50, 0.55);
-     box-shadow: 0 8px 28px rgba(80,40,0,0.18);
-   }
+  /* WT1 card — golden hover */
+  .wt-card[href="wt1.html"]:hover {
+    background: rgba(225, 185, 85, 0.38);
+    border-color: rgba(220, 180, 90, 0.68);
+    box-shadow: 0 8px 28px rgba(110, 70, 10, 0.22);
+  }
 
-   /* WT2 card — red hover */
-   .wt-card[href="wt2.html"]:hover {
-     background: rgba(200, 60, 60, 0.28);
-     border-color: rgba(200, 80, 80, 0.55);
-     box-shadow: 0 8px 28px rgba(120,0,0,0.18);
-   }
+  /* WT2 card — red hover */
+  .wt-card[href="wt2.html"]:hover {
+    background: rgba(231, 162, 162, 0.36);
+    border-color: rgba(230, 110, 110, 0.68);
+    box-shadow: 0 8px 28px rgba(140, 20, 20, 0.22);
+  }
 
-   /* WT3 card — maroon hover */
-   .wt-card[href="wt3.html"]:hover {
-     background: rgba(160, 80, 120, 0.28);
-     border-color: rgba(150, 60, 100, 0.55);
-     box-shadow: 0 8px 28px rgba(80,0,40,0.18);
-   }
+  /* WT3 card — maroon hover */
+  .wt-card[href="wt3.html"]:hover {
+    background: rgba(234, 172, 201, 0.36);
+    border-color: rgba(200, 115, 155, 0.68);
+    box-shadow: 0 8px 28px rgba(100, 20, 60, 0.22);
+  }
    
    .wt-card.upcoming {
      opacity: 0.58;
