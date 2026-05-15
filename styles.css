@@ -3,9 +3,9 @@
    styles.css — single shared stylesheet
    ============================================ */
 
-   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-   /* ── CSS Variables ────────────────────────── */
+   /* ── CSS Variables — Default (Blue) ─────────── */
    :root {
      --bg-glass:   rgba(210, 235, 255, 0.82);
      --bg-card:    rgba(190, 225, 255, 0.65);
@@ -20,12 +20,58 @@
      --radius:     14px;
      --font-display: 'Cormorant Garamond', Georgia, serif;
      --font-body:    'Montserrat', sans-serif;
+     --slider-bg:  rgba(255,255,255,0.58);
    }
    
-   /* ── Reset ────────────────────────────────── */
+   /* ── WT1 Theme — Golden Yellow-Brown ────────── */
+   body.theme-wt1 {
+     --bg-glass:   rgba(255, 240, 195, 0.82);
+     --bg-card:    rgba(240, 215, 150, 0.65);
+     --bg-hover:   rgba(255, 248, 210, 0.92);
+     --text-dark:  #6b4200;
+     --text-mid:   #000000;
+     --text-muted: #6d5232;
+     --accent:     #3d2200;
+     --divider:    rgba(180, 130, 50, 0.4);
+     --shadow-sm:  0 4px 14px rgba(80,40,0,0.14);
+     --shadow-md:  0 8px 28px rgba(80,40,0,0.22);
+     --slider-bg:  rgba(255, 220, 130, 0.65);
+   }
+   
+   /* ── WT2 Theme — Bright Red ─────────────────── */
+   body.theme-wt2 {
+     --bg-glass:   rgba(255, 210, 210, 0.82);
+     --bg-card:    rgba(255, 185, 185, 0.65);
+     --bg-hover:   rgba(255, 225, 225, 0.92);
+     --text-dark:  #8b0000;
+     --text-mid:   #000000;
+     --text-muted: #5e3327;
+     --accent:     #5a0000;
+     --divider:    rgba(200, 80, 80, 0.4);
+     --shadow-sm:  0 4px 14px rgba(120,0,0,0.14);
+     --shadow-md:  0 8px 28px rgba(120,0,0,0.22);
+     --slider-bg:  rgba(255, 160, 160, 0.65);
+   }
+   
+   /* ── WT3 Theme — Maroon ─────────────────────── */
+   body.theme-wt3 {
+     --bg-glass:   rgba(220, 195, 210, 0.82);
+     --bg-card:    rgba(200, 170, 190, 0.65);
+     --bg-hover:   rgba(235, 215, 228, 0.92);
+     --text-dark:  #5a0028;
+     --text-mid:   #000000;
+     --text-muted: #802828;
+     --accent:     #320018;
+     --divider:    rgba(150, 60, 100, 0.4);
+     --shadow-sm:  0 4px 14px rgba(80,0,40,0.14);
+     --shadow-md:  0 8px 28px rgba(80,0,40,0.22);
+     --slider-bg:  rgba(200, 140, 170, 0.65);
+   }
+   
+   /* ── Reset ────────────────────────────────────── */
    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
    
-   /* ── Base ─────────────────────────────────── */
+   /* ── Base ─────────────────────────────────────── */
    body {
      font-family: var(--font-body);
      color: var(--text-dark);
@@ -40,6 +86,10 @@
      padding: 30px 20px 60px;
    }
    
+   body.theme-wt1 { background-image: url('images/skylinewt1.png'); }
+   body.theme-wt2 { background-image: url('images/skylinewt2.png'); }
+   body.theme-wt3 { background-image: url('images/skylinewt3.png'); }
+   
    .container {
      width: 100%;
      max-width: 1300px;
@@ -48,60 +98,136 @@
      align-items: center;
    }
    
-   /* ── Nav bar ──────────────────────────────── */
+   /* ── Sticky Nav bar ───────────────────────────── */
    .site-nav {
      width: 100%;
      display: flex;
      align-items: center;
-     justify-content: space-between;
-     padding: 16px 28px;
-     background: var(--bg-glass);
-     backdrop-filter: blur(12px);
-     -webkit-backdrop-filter: blur(12px);
+     justify-content: center;
+     padding: 10px 16px;
+     background: rgba(210, 235, 255, 0.42);
+     backdrop-filter: blur(20px) saturate(1.5);
+     -webkit-backdrop-filter: blur(20px) saturate(1.5);
      border-radius: var(--radius);
-     box-shadow: var(--shadow-sm);
-     margin-bottom: 36px;
+     box-shadow: 0 4px 24px rgba(0,40,100,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
+     border: 1px solid rgba(255,255,255,0.40);
+     margin-bottom: 28px;
+     gap: 6px;
+     position: sticky;
+     top: 12px;
+     z-index: 100;
      flex-wrap: wrap;
-     gap: 12px;
    }
-   
+
+   /* Hide the old slider — no longer used */
+   .nav-slider { display: none; }
+
+   /* Nav brand — styled identically to nav-link */
    .nav-brand {
-     font-family: var(--font-display);
-     font-size: 1.5rem;
+     font-family: var(--font-body);
+     font-size: 0.78rem;
      font-weight: 600;
-     color: var(--text-dark);
+     color: #0d4f95;
      text-decoration: none;
-     letter-spacing: 0.02em;
+     letter-spacing: 0.09em;
+     text-transform: uppercase;
+     padding: 7px 14px;
+     border-radius: 8px;
+     transition: background 0.22s, color 0.22s, box-shadow 0.22s;
+     white-space: nowrap;
+     flex: 1 1 0;
+     text-align: center;
    }
-   
+
+   /* Homepage hover → default blue */
+   .nav-brand:hover {
+     background: rgba(100, 170, 230, 0.30);
+     color: #193049;
+     box-shadow: 0 2px 10px rgba(0,60,140,0.12);
+   }
+
+   /* ── Nav Links ─────────────────────────────────── */
    .nav-links {
-     display: flex;
-     gap: 8px;
-     flex-wrap: wrap;
+     display: contents; /* children flow directly into nav flex row */
    }
-   
+
    .nav-link {
-     font-size: 0.82rem;
+     font-size: 0.78rem;
      font-weight: 500;
-     color: var(--text-mid);
+     color: #3a4a60;
      text-decoration: none;
      padding: 7px 14px;
      border-radius: 8px;
-     transition: background 0.2s, color 0.2s;
-     letter-spacing: 0.03em;
+     transition: color 0.22s, background 0.22s, box-shadow 0.22s;
+     letter-spacing: 0.05em;
      text-transform: uppercase;
+     white-space: nowrap;
+     user-select: none;
+     flex: 1 1 0;
+     text-align: center;
+   }
+
+   /* Default (homepage / no-theme) hover → blue */
+   .nav-link:hover {
+     background: rgba(100, 170, 230, 0.28);
+     color: #193049;
+     box-shadow: 0 2px 10px rgba(0,60,140,0.10);
+   }
+
+   /* WT1 link hover (golden) */
+   .nav-link[href="wt1.html"]:hover {
+     background: rgba(200, 150, 40, 0.28);
+     color: #6b4200;
+     box-shadow: 0 2px 10px rgba(80,40,0,0.12);
+   }
+
+   /* Homepage button always hovers blue, even on themed pages */
+   body.theme-wt1 .nav-brand:hover,
+   body.theme-wt2 .nav-brand:hover,
+   body.theme-wt3 .nav-brand:hover {
+     background: rgba(100, 170, 230, 0.30);
+     color: #193049;
+     box-shadow: 0 2px 10px rgba(0,60,140,0.12);
+   }
+
+   /* WT2 hover (red) */
+   .nav-link[href="wt2.html"]:hover {
+     background: rgba(200, 60, 60, 0.22);
+     color: #8b0000;
+     box-shadow: 0 2px 10px rgba(120,0,0,0.12);
+   }
+
+   /* WT3 hover (maroon/mauve) */
+   .nav-link[href="wt3.html"]:hover {
+     background: rgba(160, 80, 120, 0.22);
+     color: #5a0028;
+     box-shadow: 0 2px 10px rgba(80,0,40,0.12);
+   }
+
+   .nav-link.active {
+     color: #193049;
+     font-weight: 600;
+     background: rgba(255,255,255,0.38);
+     box-shadow: 0 2px 8px rgba(0,40,100,0.10), inset 0 1px 0 rgba(255,255,255,0.6);
+   }
+
+   /* Active tab on themed pages */
+   body.theme-wt1 .nav-link.active { color: #6b4200; background: rgba(255,220,130,0.40); }
+   body.theme-wt2 .nav-link.active { color: #8b0000; background: rgba(255,160,160,0.36); }
+   body.theme-wt3 .nav-link.active { color: #5a0028; background: rgba(200,140,170,0.38); }
+
+   .nav-link.disabled-tab {
+     opacity: 0.32;
+     cursor: not-allowed;
+     pointer-events: none;
    }
    
-   .nav-link:hover, .nav-link.active {
-     background: var(--bg-hover);
-     color: var(--accent);
-   }
-   
-   /* ── Homepage Header ──────────────────────── */
+   /* ── Homepage Header ──────────────────────────── */
    .hero {
-     background: var(--bg-glass);
-     backdrop-filter: blur(14px);
-     -webkit-backdrop-filter: blur(14px);
+    background: rgba(190, 225, 255, 0.46);
+    backdrop-filter: blur(18px) saturate(1.3);
+     -webkit-backdrop-filter: blur(18px) saturate(1.3);
+     border: 1px solid rgba(255,255,255,0.35);
      width: 100%;
      padding: 56px 48px;
      margin-bottom: 48px;
@@ -113,7 +239,7 @@
    .hero-name {
      font-family: var(--font-display);
      font-size: clamp(2.4rem, 5vw, 4rem);
-     font-weight: 300;
+     font-weight: 800;
      color: var(--text-dark);
      letter-spacing: 0.04em;
      margin-bottom: 10px;
@@ -137,7 +263,7 @@
      line-height: 1.75;
    }
    
-   /* ── Work Term Grid ───────────────────────── */
+   /* ── Work Term Grid ───────────────────────────── */
    .wt-grid {
      display: grid;
      grid-template-columns: repeat(5, 1fr);
@@ -147,9 +273,10 @@
    }
    
    .wt-card {
-     background: var(--bg-card);
-     backdrop-filter: blur(10px);
-     -webkit-backdrop-filter: blur(10px);
+     background: rgba(190, 225, 255, 0.46);
+     backdrop-filter: blur(12px) saturate(1.2);
+     -webkit-backdrop-filter: blur(12px) saturate(1.2);
+     border: 1px solid rgba(255,255,255,0.46);
      color: var(--text-dark);
      text-decoration: none;
      padding: 28px 18px;
@@ -159,14 +286,13 @@
      align-items: center;
      justify-content: center;
      gap: 18px;
-     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
      box-shadow: var(--shadow-sm);
      min-height: 240px;
-     border: 1px solid rgba(255,255,255,0.5);
      position: relative;
      overflow: hidden;
    }
-   
+
    .wt-card::after {
      content: '';
      position: absolute;
@@ -175,21 +301,40 @@
      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 60%);
      pointer-events: none;
    }
-   
+
+   /* Default (blue) hover */
    .wt-card:hover {
      transform: translateY(-6px);
      box-shadow: var(--shadow-md);
-     background: var(--bg-hover);
+     background: rgba(100, 170, 230, 0.38);
+     border-color: rgba(100, 170, 230, 0.55);
+   }
+
+   /* WT1 card — golden hover */
+   .wt-card[href="wt1.html"]:hover {
+     background: rgba(200, 150, 40, 0.30);
+     border-color: rgba(180, 130, 50, 0.55);
+     box-shadow: 0 8px 28px rgba(80,40,0,0.18);
+   }
+
+   /* WT2 card — red hover */
+   .wt-card[href="wt2.html"]:hover {
+     background: rgba(200, 60, 60, 0.28);
+     border-color: rgba(200, 80, 80, 0.55);
+     box-shadow: 0 8px 28px rgba(120,0,0,0.18);
+   }
+
+   /* WT3 card — maroon hover */
+   .wt-card[href="wt3.html"]:hover {
+     background: rgba(160, 80, 120, 0.28);
+     border-color: rgba(150, 60, 100, 0.55);
+     box-shadow: 0 8px 28px rgba(80,0,40,0.18);
    }
    
    .wt-card.upcoming {
-     opacity: 0.72;
-     cursor: default;
-   }
-   
-   .wt-card.upcoming:hover {
-     transform: none;
-     box-shadow: var(--shadow-sm);
+     opacity: 0.58;
+     cursor: not-allowed;
+     pointer-events: none;
    }
    
    .wt-card img {
@@ -230,27 +375,29 @@
    
    .wt-season {
      font-size: 0.9rem;
-     font-weight: 400;
+     font-weight: 500;
      color: var(--text-muted);
      text-align: center;
    }
    
-
-   
-   /* ── Subpage Layout ───────────────────────── */
+   /* ── Subpage Layout ───────────────────────────── */
    .content-box {
-     background: var(--bg-glass);
-     backdrop-filter: blur(14px);
-     -webkit-backdrop-filter: blur(14px);
+     background: rgba(210, 235, 255, 0.42);
+     backdrop-filter: blur(22px) saturate(1.4);
+     -webkit-backdrop-filter: blur(22px) saturate(1.4);
      border-radius: var(--radius);
      padding: 52px 56px;
      box-shadow: var(--shadow-md);
      color: var(--text-dark);
      width: 100%;
-     border: 1px solid rgba(255,255,255,0.55);
+     border: 1px solid rgba(255,255,255,0.40);
    }
+
+   body.theme-wt1 .content-box { background: rgba(255, 240, 195, 0.42); }
+   body.theme-wt2 .content-box { background: rgba(255, 210, 210, 0.42); }
+   body.theme-wt3 .content-box { background: rgba(220, 195, 210, 0.42); }
    
-   /* ── Subpage Header ───────────────────────── */
+   /* ── Subpage Header ───────────────────────────── */
    .subpage-header {
      display: flex;
      align-items: center;
@@ -279,13 +426,12 @@
      line-height: 1.3;
    }
    
-   /* ── Article Typography ───────────────────── */
+   /* ── Article Typography ───────────────────────── */
    .subpage-content { font-size: 1.05rem; line-height: 1.78; color: var(--text-mid); }
    .subpage-content p { margin-bottom: 18px; }
    .subpage-content ul { margin-bottom: 20px; padding-left: 36px; }
    .subpage-content li { margin-bottom: 12px; }
    
-   /* Section headings */
    .subtitle {
      font-family: var(--font-display);
      font-size: 1.8rem;
@@ -313,7 +459,7 @@
    .skill-title, .goal-title { font-weight: 600; color: var(--text-dark); }
    .goal-item { margin-bottom: 12px; }
    
-   /* ── Divider ──────────────────────────────── */
+   /* ── Divider ──────────────────────────────────── */
    .section-divider {
      height: 1px;
      border: none;
@@ -321,18 +467,24 @@
      margin: 40px 0;
    }
    
-   /* ── Images ───────────────────────────────── */
+   /* ── Images ───────────────────────────────────── */
    .content-image {
      border-radius: 10px;
      box-shadow: var(--shadow-sm);
      width: 100%;
      height: auto;
      object-fit: cover;
+     cursor: zoom-in;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .content-image:hover {
+     transform: scale(1.018);
+     box-shadow: var(--shadow-md);
    }
    
    .image-container { text-align: center; margin: 28px 0; }
    .image-caption { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; font-style: italic; }
-   
    .centered-image { max-width: 600px; margin: 0 auto; display: block; }
    
    .image-group {
@@ -375,20 +527,80 @@
    .conclusion-images > div { text-align: center; flex: 1; min-width: 200px; max-width: 45%; }
    .conclusion-images img { max-width: 340px; }
    
-   /* ── Links ────────────────────────────────── */
+   /* ── Links ────────────────────────────────────── */
    .subpage-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
    .subpage-content a:hover { opacity: 0.8; }
    
-   /* ── Responsive ───────────────────────────── */
+   /* ── Image Lightbox ───────────────────────────── */
+   .lightbox-overlay {
+     position: fixed;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.82);
+     backdrop-filter: blur(10px);
+     z-index: 9999;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.28s ease;
+   }
+   
+   .lightbox-overlay.active {
+     opacity: 1;
+     pointer-events: all;
+   }
+   
+   .lightbox-overlay img {
+     max-width: 90vw;
+     max-height: 88vh;
+     border-radius: 12px;
+     box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+     transform: scale(0.90);
+     transition: transform 0.32s cubic-bezier(0.34, 1.46, 0.64, 1);
+     object-fit: contain;
+   }
+   
+   .lightbox-overlay.active img {
+     transform: scale(1);
+   }
+   
+   .lightbox-close {
+     position: absolute;
+     top: 22px;
+     right: 28px;
+     font-size: 2rem;
+     color: rgba(255,255,255,0.8);
+     cursor: pointer;
+     line-height: 1;
+     transition: color 0.2s, transform 0.2s;
+     background: none;
+     border: none;
+     font-family: var(--font-body);
+   }
+   
+   .lightbox-close:hover {
+     color: #fff;
+     transform: scale(1.15) rotate(8deg);
+   }
+   
+   /* Active state for Homepage button when on index */
+   .nav-brand.active-home {
+     background: rgba(255,255,255,0.38);
+     color: #193049;
+     font-weight: 700;
+     box-shadow: 0 2px 8px rgba(0,40,100,0.10), inset 0 1px 0 rgba(255,255,255,0.6);
+   }
+
+   /* ── Responsive ───────────────────────────────── */
    @media (max-width: 1100px) {
      .wt-grid { grid-template-columns: repeat(3, 1fr); }
    }
    
    @media (max-width: 768px) {
      body { padding: 16px 12px 40px; }
-     .site-nav { padding: 14px 18px; }
-     .nav-links { gap: 4px; }
-     .nav-link { font-size: 0.75rem; padding: 6px 10px; }
+     .site-nav { padding: 8px 10px; top: 8px; gap: 4px; }
+     .nav-brand, .nav-link { font-size: 0.68rem; padding: 6px 8px; }
      .hero { padding: 36px 24px; }
      .wt-grid { grid-template-columns: repeat(2, 1fr); }
      .content-box { padding: 30px 18px; }
@@ -407,6 +619,8 @@
      }
    }
    
-   @media (max-width: 480px) {
+   @media (max-width: 560px) {
+     .site-nav { flex-wrap: wrap; }
+     .nav-brand, .nav-link { flex: 1 1 calc(33% - 8px); min-width: 0; font-size: 0.65rem; padding: 6px 4px; }
      .wt-grid { grid-template-columns: 1fr; }
    }
