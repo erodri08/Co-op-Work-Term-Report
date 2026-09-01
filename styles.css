@@ -587,7 +587,7 @@ body.theme-wt3 .content-box { background: rgba(220, 195, 210, 0.42); }
   background: rgba(255,255,255,0.55);
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 1s ease, transform 0.2s ease;
 }
 
 .carousel-dot.active {
